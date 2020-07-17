@@ -1,7 +1,7 @@
 //Program to convert Infix expression into Postfix expression
 import java.util.Stack;
 import java.util.Scanner;
-class Stack1
+class Infix_into_Postfix
 {
 	static int Prec(char ch)
 	{
