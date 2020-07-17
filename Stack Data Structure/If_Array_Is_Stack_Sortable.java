@@ -1,3 +1,4 @@
+//Java Program to check whether array can be sorted using stack
 import java.util.*;
 
 class If_Array_Is_Stack_Sortable 
