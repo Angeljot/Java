@@ -19,7 +19,7 @@ class If_Array_Is_Stack_Sortable
 		    		ar1[i]=stack.pop();
 		    	
 		    	
-		    	System.out.println(ar1[i]);
+		    	
         }
 		for(int i=1;i<=n-1;i++)
 			
