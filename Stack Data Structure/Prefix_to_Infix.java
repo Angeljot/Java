@@ -1,7 +1,7 @@
 //Program to convert prefix to infix conversion
 import java.util.Stack;
 import java.util.Scanner;
-class Stack2
+class Prefix_to_Infix
 {
 	static String convert(String exp)
 	{
