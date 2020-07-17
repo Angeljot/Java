@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Stack4 
+class If_Array_Is_Stack_Sortable 
 {
 	static boolean check(int ar[])
 	{
