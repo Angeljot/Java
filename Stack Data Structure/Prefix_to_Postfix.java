@@ -1,7 +1,7 @@
 // JavaProgram to convert prefix to postfix 
 import java.util.*; 
 
-class Stack3
+class Prefix_to_Postfix
 { 
 
 // funtion to check if character 
