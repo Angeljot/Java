@@ -25,11 +25,11 @@ class If_Array_Is_Stack_Sortable
 		for(int i=1;i<=n-1;i++)
 			
 		
-			  // Unsorted pair found 
+			  
             if (ar1[i - 1] > ar1[i]) 
                 return false; 
   
-        // No unsorted pair found 
+         
         return true; 
 		
 		
