@@ -1,46 +1,75 @@
-import java.util.*;
-
-class Stack4 
+//Program to convert Infix expression into Postfix expression
+import java.util.Stack;
+import java.util.Scanner;
+class Stack1
 {
-	static boolean check(int ar[])
+	static int Prec(char ch)
 	{
-		Stack<Integer> stack=new Stack<>();
-		int n=ar.length;
-		for(int i=0;i<=n-1;i++)
+		switch(ch)
 		{
-			int c=ar[i];
-			stack.push(c);
-		}	
-		int[] ar1;
-		ar1 = new int[n];// allocating memory for 5 integers. 
-		for(int i=0;i<=n-1;i++)
-		{	
-		    	
-		    		ar1[i]=stack.pop();
-		    	
-		    	
-		    	System.out.println(ar1[i]);
-        }
-		for(int i=1;i<=n-1;i++)
+		case '+':
+		case '-':
+			return 1;
+		case '*':
+		case '/':
+			return 2;
+		case '^':
+			return 3;
+			
+		}
+		return -1;
+		
+	}
+	static String infixTopostfix(String exp)
+	{
+		String result=new String("");
+		Stack<Character> stack=new Stack<>();
+		for(int i=0;i<exp.length();i++)
+		{
+			char c=exp.charAt(i);
+			
+			//if scanned character is operand
+			if(Character.isLetterOrDigit(c))
+			{
+				result+=c;
+				
+			}
+			else if(c=='(')
+				stack.push(c);
+			else if(c==')')
+			{
+				while(!stack.isEmpty() && stack.peek()!='(')
+				
+					result+=stack.pop();
+					if(!stack.isEmpty() && stack.peek()!='(')
+						return "Invalid Expression";
+					else
+						stack.pop();
+					
+				
+				
+			}
+			else//if scanned character is operator
+			{
+				while(!stack.isEmpty() && Prec(c)<=Prec(stack.peek()))
+				{
+					result+=stack.pop();
+				}
+				stack.push(c);
+				
+			}
+		}
+			while(!stack.isEmpty())
+				result+=stack.pop();
 			
 		
-			  
-            if (ar1[i - 1] > ar1[i]) 
-                return false; 
-  
-      
-        return true; 
-		
-		
-		    
-		
-		
+		return result;
 	}
 	public static void main(String[] args)
 	{
-		int a[]= {3,2,1};
+		Scanner s=new Scanner(System.in);
+		String exp=s.nextLine();
+		System.out.println(infixTopostfix(exp));
 		
-		System.out.println(check(a));
 	}
-
 }
